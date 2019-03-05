@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+<script src="~/arcontent/aframe.0.7.1.min.js"></script>
+<script src="~/arcontent/aframe-ar.1.6.2.js"></script>
+<script src="~/arcontent/animation_loader.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: false" vr-mode-ui="enabled: false">
+        <a-marker id="marker" preset='custom' type='pattern' url='~/arcontent/afcalogo5.patt'>
+            <a-gltf-model src="~/arcontent/afcaNewYearTeaAnimation_mitSmiley.gltf" scale="2 2 2" rotation="270 0 0" position="0 0 0.7" play-all-model-animations></a-gltf-model>
+        </a-marker>
+        <a-entity camera></a-entity>
+        <a-sound src="src: url(/arcontent/BellsAsiaLow.mp3)" autoplay="true" position="0 2 5"></a-sound>
+    </a-scene>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-48407846-1', 'afca.ch');
+        ga('send', 'pageview');
+    </script>
+</body>
+
